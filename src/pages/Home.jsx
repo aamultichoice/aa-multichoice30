@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -17,7 +16,7 @@ import {
   MapPin,
   Menu,
   X,
-  Shield // Added Shield icon import
+  Shield
 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -100,7 +99,7 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-3"> {/* Changed gap-2 to gap-3 */}
+            <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-900 to-blue-700 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">AA</span>
               </div>
