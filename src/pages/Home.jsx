@@ -15,8 +15,7 @@ import {
   Phone,
   MapPin,
   Menu,
-  X,
-  Shield
+  X
 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -98,18 +97,13 @@ export default function Home() {
         className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-900 to-blue-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">AA</span>
-              </div>
-              <div>
-                <h1 className="font-bold text-gray-900 text-lg">AA Multichoice</h1>
-                <div className="flex items-center gap-1.5">
-                  <Shield className="w-3 h-3 text-red-600" />
-                  <p className="text-xs font-semibold text-red-600">Veteran Owned</p>
-                </div>
-              </div>
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png"
+                alt="AA Multichoice LLC"
+                className="h-16 w-auto"
+              />
             </div>
 
             {/* Desktop Navigation */}
@@ -166,7 +160,7 @@ export default function Home() {
       <motion.section 
         id="home"
         style={{ y: heroY, opacity: heroOpacity }}
-        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80')] bg-cover bg-center opacity-10"></div>
@@ -179,17 +173,23 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/30 rounded-full px-4 py-2 mb-6">
-              <Shield className="w-5 h-5 text-red-400" />
-              <span className="text-red-100 font-semibold">Proudly Veteran Owned</span>
+            <div className="mb-8">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png"
+                alt="AA Multichoice LLC"
+                className="h-48 w-auto mx-auto mb-6"
+              />
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
               Your Trusted Business
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">
                 Partner for Success
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-2xl md:text-3xl font-bold text-blue-100 mb-4 italic">
+              "Driven by Discipline. Powered by Precision."
+            </p>
+            <p className="text-xl md:text-2xl text-blue-200 mb-8 max-w-3xl mx-auto">
               From notary services to logistics, procurement, and business strategy — 
               we provide comprehensive solutions to help your business thrive.
             </p>
@@ -275,13 +275,13 @@ export default function Home() {
                 About AA Multichoice LLC
               </h2>
               <p className="text-lg text-gray-700 mb-6">
-                AA Multichoice LLC is your comprehensive business solutions partner. We understand that 
-                modern businesses need diverse, reliable services to succeed in today's competitive landscape.
+                AA Multichoice LLC is your comprehensive business solutions partner. As a veteran-owned business,
+                we bring military precision, discipline, and unwavering commitment to excellence in everything we do.
               </p>
               <p className="text-lg text-gray-700 mb-8">
                 Our team of experienced professionals brings expertise across multiple domains — from legal 
-                notarization to strategic business consultation. We're committed to delivering excellence 
-                in every service we provide.
+                notarization to strategic business consultation. We understand that modern businesses need 
+                diverse, reliable services to succeed in today's competitive landscape.
               </p>
 
               <div className="space-y-4">
@@ -422,20 +422,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-yellow-400 rounded-lg flex items-center justify-center">
-                  <span className="text-blue-950 font-bold text-xl">AA</span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">AA Multichoice LLC</h3>
-                  <div className="flex items-center gap-1.5">
-                    <Shield className="w-3 h-3 text-red-400" />
-                    <span className="text-xs font-semibold text-red-400">Veteran Owned</span>
-                  </div>
-                </div>
+              <div className="mb-4">
+                <img 
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png"
+                  alt="AA Multichoice LLC"
+                  className="h-24 w-auto mb-3 brightness-0 invert"
+                />
               </div>
               <p className="text-gray-400">
                 Your trusted partner for notary, logistics, procurement, business consultation, and document drafting services.
+              </p>
+              <p className="text-sm text-gray-500 mt-4 italic">
+                "Driven by Discipline. Powered by Precision."
               </p>
             </div>
 
