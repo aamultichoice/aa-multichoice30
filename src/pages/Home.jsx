@@ -1,13 +1,14 @@
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { 
-  FileCheck, 
-  Truck, 
-  ShoppingCart, 
-  Lightbulb, 
+import {
+  FileCheck,
+  Truck,
+  ShoppingCart,
+  Lightbulb,
   FileText,
   ArrowRight,
   CheckCircle,
@@ -90,16 +91,28 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAFAF9]">
+    <div className="min-h-screen bg-[#FAFAF9] relative">
+      {/* Logo Background Watermark */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute inset-0 bg-repeat opacity-[0.03]"
+          style={{
+            backgroundImage: `url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png')`,
+            backgroundSize: '400px 400px',
+            backgroundPosition: 'center'
+          }}
+        />
+      </div>
+
       {/* Navigation */}
-      <motion.nav 
+      <motion.nav
         style={{ opacity: headerOpacity }}
         className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
-              <img 
+              <img
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png"
                 alt="AA Multichoice LLC"
                 className="h-16 w-auto"
@@ -157,13 +170,22 @@ export default function Home() {
       </motion.nav>
 
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         id="home"
         style={{ y: heroY, opacity: heroOpacity }}
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+          {/* Large Logo Watermark in Hero */}
+          <div
+            className="absolute inset-0 bg-no-repeat bg-center opacity-[0.08]"
+            style={{
+              backgroundImage: `url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png')`,
+              backgroundSize: '800px auto',
+              filter: 'brightness(2)'
+            }}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 to-transparent"></div>
         </div>
 
@@ -174,7 +196,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <div className="mb-8">
-              <img 
+              <img
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png"
                 alt="AA Multichoice LLC"
                 className="h-48 w-auto mx-auto mb-6"
@@ -190,22 +212,22 @@ export default function Home() {
               "Driven by Discipline. Powered by Precision."
             </p>
             <p className="text-xl md:text-2xl text-blue-200 mb-8 max-w-3xl mx-auto">
-              From notary services to logistics, procurement, and business strategy — 
+              From notary services to logistics, procurement, and business strategy —
               we provide comprehensive solutions to help your business thrive.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 onClick={() => scrollToSection("services")}
-                size="lg" 
+                size="lg"
                 className="bg-yellow-500 hover:bg-yellow-600 text-blue-950 font-semibold text-lg px-8 py-6"
               >
                 Explore Services
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button 
+              <Button
                 onClick={() => scrollToSection("contact")}
-                size="lg" 
-                variant="outline" 
+                size="lg"
+                variant="outline"
                 className="bg-white/10 border-white/30 text-white hover:bg-white/20 text-lg px-8 py-6"
               >
                 Contact Us
@@ -214,7 +236,7 @@ export default function Home() {
           </motion.div>
 
           {/* Floating Stats */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -236,7 +258,7 @@ export default function Home() {
       </motion.section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-20 bg-white relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -262,7 +284,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-blue-50 to-white">
+      <section id="about" className="py-20 bg-gradient-to-br from-blue-50 to-white relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -279,8 +301,8 @@ export default function Home() {
                 we bring military precision, discipline, and unwavering commitment to excellence in everything we do.
               </p>
               <p className="text-lg text-gray-700 mb-8">
-                Our team of experienced professionals brings expertise across multiple domains — from legal 
-                notarization to strategic business consultation. We understand that modern businesses need 
+                Our team of experienced professionals brings expertise across multiple domains — from legal
+                notarization to strategic business consultation. We understand that modern businesses need
                 diverse, reliable services to succeed in today's competitive landscape.
               </p>
 
@@ -307,8 +329,8 @@ export default function Home() {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" 
+                <img
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
                   alt="Team collaboration"
                   className="w-full h-96 object-cover"
                 />
@@ -324,7 +346,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      <section id="contact" className="py-20 bg-white relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -418,12 +440,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-12 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="mb-4">
-                <img 
+                <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png"
                   alt="AA Multichoice LLC"
                   className="h-24 w-auto mb-3 brightness-0 invert"
@@ -442,7 +464,7 @@ export default function Home() {
               <ul className="space-y-2">
                 {["Home", "Services", "About", "Contact"].map((item) => (
                   <li key={item}>
-                    <button 
+                    <button
                       onClick={() => scrollToSection(item.toLowerCase())}
                       className="text-gray-400 hover:text-yellow-400 transition-colors"
                     >
