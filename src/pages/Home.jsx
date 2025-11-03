@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,7 +16,8 @@ import {
   Phone,
   MapPin,
   Menu,
-  X
+  X,
+  Shield // Added Shield icon import
 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -98,13 +100,16 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3"> {/* Changed gap-2 to gap-3 */}
               <div className="w-10 h-10 bg-gradient-to-br from-blue-900 to-blue-700 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">AA</span>
               </div>
               <div>
                 <h1 className="font-bold text-gray-900 text-lg">AA Multichoice</h1>
-                <p className="text-xs text-gray-600">Your Business Partner</p>
+                <div className="flex items-center gap-1.5">
+                  <Shield className="w-3 h-3 text-red-600" />
+                  <p className="text-xs font-semibold text-red-600">Veteran Owned</p>
+                </div>
               </div>
             </div>
 
@@ -175,6 +180,10 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/30 rounded-full px-4 py-2 mb-6">
+              <Shield className="w-5 h-5 text-red-400" />
+              <span className="text-red-100 font-semibold">Proudly Veteran Owned</span>
+            </div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
               Your Trusted Business
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">
@@ -420,6 +429,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">AA Multichoice LLC</h3>
+                  <div className="flex items-center gap-1.5">
+                    <Shield className="w-3 h-3 text-red-400" />
+                    <span className="text-xs font-semibold text-red-400">Veteran Owned</span>
+                  </div>
                 </div>
               </div>
               <p className="text-gray-400">
