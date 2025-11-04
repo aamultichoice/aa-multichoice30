@@ -392,7 +392,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                      <p className="text-gray-600">info@aamultichoice.com</p>
+                      <p className="text-gray-600">info@aamultichoicellc.com</p>
                     </div>
                   </div>
 
