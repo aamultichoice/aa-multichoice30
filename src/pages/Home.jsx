@@ -94,11 +94,11 @@ export default function Home() {
     <div className="min-h-screen bg-[#FAFAF9] relative">
       {/* Logo Background Watermark */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute inset-0 bg-repeat opacity-[0.03]"
+        <div 
+          className="absolute inset-0 bg-repeat opacity-[0.04]"
           style={{
             backgroundImage: `url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png')`,
-            backgroundSize: '400px 400px',
+            backgroundSize: '350px 350px',
             backgroundPosition: 'center'
           }}
         />
@@ -114,7 +114,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <img
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png"
-                alt="AA Multichoice LLC"
+                alt="AA MultiChoice LLC"
                 className="h-16 w-auto"
               />
             </div>
@@ -176,13 +176,15 @@ export default function Home() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+          <div className="absolute inset-0 opacity-10">
+            <div className="w-full h-full bg-gradient-to-br from-blue-900/30 to-transparent"></div>
+          </div>
           {/* Large Logo Watermark in Hero */}
-          <div
-            className="absolute inset-0 bg-no-repeat bg-center opacity-[0.08]"
+          <div 
+            className="absolute inset-0 bg-no-repeat bg-center opacity-[0.09]"
             style={{
               backgroundImage: `url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png')`,
-              backgroundSize: '800px auto',
+              backgroundSize: '700px auto',
               filter: 'brightness(2)'
             }}
           />
@@ -198,7 +200,7 @@ export default function Home() {
             <div className="mb-8">
               <img
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png"
-                alt="AA Multichoice LLC"
+                alt="AA MultiChoice LLC"
                 className="h-48 w-auto mx-auto mb-6"
               />
             </div>
@@ -294,10 +296,10 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                About AA Multichoice LLC
+                About AA MultiChoice LLC
               </h2>
               <p className="text-lg text-gray-700 mb-6">
-                AA Multichoice LLC is your comprehensive business solutions partner. As a veteran-owned business,
+                AA MultiChoice LLC is your comprehensive business solutions partner. As a veteran-owned business,
                 we bring military precision, discipline, and unwavering commitment to excellence in everything we do.
               </p>
               <p className="text-lg text-gray-700 mb-8">
@@ -329,12 +331,13 @@ export default function Home() {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
-                  alt="Team collaboration"
-                  className="w-full h-96 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+                <div className="w-full h-96 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center">
+                  <div className="text-center text-white p-8">
+                    <div className="text-6xl font-bold mb-4">AA</div>
+                    <div className="text-3xl font-semibold mb-2">MultiChoice LLC</div>
+                    <div className="text-lg opacity-90">Veteran Owned Business</div>
+                  </div>
+                </div>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-yellow-500 text-blue-950 p-8 rounded-2xl shadow-xl">
                 <div className="text-3xl font-bold mb-2">Your Success</div>
@@ -447,12 +450,12 @@ export default function Home() {
               <div className="mb-4">
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png"
-                  alt="AA Multichoice LLC"
-                  className="h-24 w-auto mb-3 brightness-0 invert"
+                  alt="AA MultiChoice LLC"
+                  className="h-28 w-auto mb-3 brightness-0 invert"
                 />
               </div>
               <p className="text-gray-400">
-                Your trusted partner for notary, logistics, procurement, business consultation, and document drafting services.
+                Your trusted veteran-owned partner for notary, logistics, procurement, business consultation, and document drafting services.
               </p>
               <p className="text-sm text-gray-500 mt-4 italic">
                 "Driven by Discipline. Powered by Precision."
@@ -488,7 +491,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} AA Multichoice LLC. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} AA MultiChoice LLC. All rights reserved. Veteran Owned Business.</p>
           </div>
         </div>
       </footer>
