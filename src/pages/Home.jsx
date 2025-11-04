@@ -57,6 +57,12 @@ const services = [
     title: "Document Drafting",
     description: "Professional document preparation and drafting services. Accurate, legally sound, and tailored to your needs.",
     features: ["Contract Drafting", "Legal Documents", "Business Agreements", "Custom Templates"]
+  },
+  {
+    icon: Lightbulb,
+    title: "Sales & Marketing",
+    description: "Strategic sales and marketing solutions to boost your business growth. From brand development to lead generation.",
+    features: ["Marketing Strategy", "Brand Development", "Lead Generation", "Sales Optimization"]
   }
 ];
 
@@ -273,8 +279,20 @@ export default function Home() {
       </motion.section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-white relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="services" className="py-20 bg-white relative z-10 overflow-hidden">
+        {/* Logo Background for Services Section */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-repeat opacity-[0.03]"
+            style={{
+              backgroundImage: `url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png')`,
+              backgroundSize: '250px 250px',
+              backgroundPosition: 'center'
+            }}
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -455,7 +473,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                      <p className="text-gray-600">+1 786-687-9003</p>
+                      <p className="text-gray-600">786-687-9003</p>
                     </div>
                   </div>
 
@@ -478,7 +496,7 @@ export default function Home() {
                 <CardContent className="space-y-2">
                   <div className="flex justify-between">
                     <span>Monday - Friday</span>
-                    <span className="font-semibold">9:00 AM - 6:00 PM</span>
+                    <span className="font-semibold">8:00 AM - 5:00 PM CST</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Saturday</span>
@@ -504,11 +522,11 @@ export default function Home() {
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6907f0b8130628cdd59135c9/8b85e86c2_Logo.png"
                   alt="AA MultiChoice LLC"
-                  className="h-28 w-auto mb-3 brightness-0 invert"
+                  className="h-32 w-auto mb-3 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
                 />
               </div>
               <p className="text-gray-400">
-                Your trusted veteran-owned partner for notary, logistics, procurement, business consultation, and document drafting services.
+                Your trusted veteran-owned partner for notary, logistics, procurement, business consultation, sales & marketing, and document drafting services.
               </p>
               <p className="text-sm text-gray-500 mt-4 italic">
                 "Driven by Discipline. Powered by Precision."
@@ -538,6 +556,7 @@ export default function Home() {
                 <li>Logistics Solutions</li>
                 <li>Procurement Services</li>
                 <li>Business Consultation</li>
+                <li>Sales & Marketing</li>
                 <li>Document Drafting</li>
               </ul>
             </div>
