@@ -18,13 +18,8 @@ import {
   X
 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useQuery } from "@tanstack/react-query";
-import { base44 } from "@/api/base44Client";
-
 import ServiceCard from "../components/ServiceCard";
 import ContactForm from "../components/ContactForm";
-import TestimonialCard from "../components/TestimonialCard";
-import TestimonialForm from "../components/TestimonialForm";
 
 const services = [
   {
@@ -79,22 +74,15 @@ export default function Home() {
   const heroY = useTransform(scrollY, [0, 500], [0, 150]);
   const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
 
-  const { data: testimonials = [], isLoading: testimonialsLoading } = useQuery({
-    queryKey: ['testimonials'],
-    queryFn: async () => {
-      const allTestimonials = await base44.entities.Testimonial.list();
-      return allTestimonials.filter(t => t.is_approved);
-    },
-  });
+
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "services", "testimonials", "about", "contact"];
+      const sections = ["home", "services", "about", "contact"];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Check if the section is mostly in view, within a certain offset from the top
           return rect.top <= 100 && rect.bottom >= 100;
         }
         return false;
@@ -145,7 +133,7 @@ export default function Home() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              {["home", "services", "testimonials", "about", "contact"].map((item) => (
+              {["home", "services", "about", "contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -179,7 +167,7 @@ export default function Home() {
             className="md:hidden border-t border-gray-200 bg-white"
           >
             <div className="px-4 py-4 space-y-3">
-              {["home", "services", "testimonials", "about", "contact"].map((item) => (
+              {["home", "services", "about", "contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -321,45 +309,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-gradient-to-br from-blue-50 to-white relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              What Our Clients Say
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it — hear from businesses we've helped succeed
-            </p>
-          </motion.div>
 
-          {testimonialsLoading ? (
-            <div className="text-center py-12">
-              <div className="inline-block w-12 h-12 border-4 border-blue-900 border-t-transparent rounded-full animate-spin"></div>
-            </div>
-          ) : testimonials.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {testimonials.map((testimonial, index) => (
-                <TestimonialCard key={testimonial.id} testimonial={testimonial} index={index} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12 mb-16">
-              <p className="text-gray-600 text-lg">Be the first to share your experience with us!</p>
-            </div>
-          )}
-
-          <div className="max-w-2xl mx-auto">
-            <TestimonialForm />
-          </div>
-        </div>
-      </section>
 
       {/* About Section */}
       <section id="about" className="py-20 bg-gradient-to-br from-blue-50 to-white relative z-10">
