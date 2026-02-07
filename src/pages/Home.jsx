@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -63,6 +62,12 @@ const services = [
     title: "Sales & Marketing",
     description: "Strategic sales and marketing solutions to boost your business growth. From brand development to lead generation.",
     features: ["Marketing Strategy", "Brand Development", "Lead Generation", "Sales Optimization"]
+  },
+  {
+    icon: Lightbulb,
+    title: "Web & App Building",
+    description: "Custom web and mobile application development services. Modern, scalable, and user-friendly digital solutions.",
+    features: ["Website Development", "Mobile Apps", "Custom Software", "UI/UX Design"]
   }
 ];
 
@@ -526,7 +531,7 @@ export default function Home() {
                 />
               </div>
               <p className="text-gray-400">
-                Your trusted veteran-owned partner for notary, logistics, procurement, business consultation, sales & marketing, and document drafting services.
+                Your trusted veteran-owned partner for notary, logistics, procurement, business consultation, sales & marketing, web & app building, and document drafting services.
               </p>
               <p className="text-sm text-gray-500 mt-4 italic">
                 "Driven by Discipline. Powered by Precision."
@@ -536,7 +541,7 @@ export default function Home() {
             <div>
               <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                {["Home", "Services", "Testimonials", "About", "Contact"].map((item) => (
+                {["Home", "Services", "About", "Contact"].map((item) => (
                   <li key={item}>
                     <button
                       onClick={() => scrollToSection(item.toLowerCase())}
@@ -557,6 +562,7 @@ export default function Home() {
                 <li>Procurement Services</li>
                 <li>Business Consultation</li>
                 <li>Sales & Marketing</li>
+                <li>Web & App Building</li>
                 <li>Document Drafting</li>
               </ul>
             </div>
